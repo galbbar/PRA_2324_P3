@@ -95,7 +95,17 @@ class BSTree {
 			return n;
 		}
 	}
+	
+	void delete_cascade(BSNode<T>* n)
+	{
+		if(n != nullptr)
+		{
+			delete_cascade(n->right);
+			delete_cascade(n->left);
 
+			delete n;
+		}
+	}
 
     public:
 	BSTree()
@@ -103,6 +113,11 @@ class BSTree {
 		nelem = 0;
 		root = nullptr;
 	}
+
+	~BSTree()
+	{
+                delete_cascade(root);
+        }
 
 	int size() const
 	{
