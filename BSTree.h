@@ -69,7 +69,7 @@ class BSTree {
 						n->left = remove_max(n->left);
 					}
 					else
-						n = (n->ñeft != nullptr)? n->left : n->right (n->left != nullptr)? n->left : n->right;;
+						n = (n->ñeft != nullptr)? n->left : n->right;
 				}
 		return n;
 	}
